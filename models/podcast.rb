@@ -4,6 +4,6 @@ class Podcast
   property :title
   property :url
 
-  has_many :out, :hosts, origin: :person
-  has_many :in, :episodes, type: :episode
+  has_many :out, :hosts, type: :host
+  has_many :out, :guests, type: :guest
 end

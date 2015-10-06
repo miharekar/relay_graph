@@ -8,4 +8,5 @@ Neo4j::Session.open(:server_db, 'http://localhost:7474', basic_auth: auth)
 
 require 'importer'
 importer = Importer.new
-importer.import
+importer.import_hosts
+importer.import_guests

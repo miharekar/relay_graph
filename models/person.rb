@@ -4,6 +4,6 @@ class Person
   property :name
   property :twitter
 
-  has_many :in, :podcasts, type: :host
-  has_many :in, :guest_episodes, type: :guest, model_class: :Episode
+  has_many :in, :podcasts, type: :host, model_class: :Podcast
+  has_many :in, :guest_podcasts, type: :guest, model_class: :Podcast
 end
