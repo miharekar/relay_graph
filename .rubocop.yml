@@ -1,0 +1,11 @@
+Style/Documentation:
+  Enabled: false
+
+Lint/Debugger:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Style/IndentHash:
+  EnforcedStyle: consistent
