@@ -11,7 +11,9 @@ class Importer
       link = host.at_css('a')
       person = Person.find_or_create_by(name: link.text)
       person_doc = Nokogiri.HTML(open(URL + link['href']))
+      person.update_attributes(twitter: person_doc.at_css('.twitter-link').text)
       person.podcasts = podcasts(person_doc)
+      person.guest_podcasts = guest_podcasts(person_doc)
     end
   end
 
@@ -20,6 +22,7 @@ class Importer
       link = guest.at_css('a')
       person = Person.find_or_create_by(name: link.text)
       person_doc = Nokogiri.HTML(open(URL + link['href']))
+      person.update_attributes(twitter: person_doc.at_css('.twitter-link').text)
       person.guest_podcasts = guest_podcasts(person_doc)
     end
   end
